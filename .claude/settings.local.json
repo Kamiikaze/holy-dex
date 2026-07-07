@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__webstorm__list_directory_tree",
+      "mcp__webstorm__get_file_text_by_path"
+    ]
+  }
+}
