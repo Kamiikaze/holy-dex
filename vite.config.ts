@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vuetify from 'vite-plugin-vuetify'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vuetify from "vite-plugin-vuetify";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/holy-drinks/', // GitHub Pages repo name — change if you rename the repo
+  base: "/holy-drinks/", // GitHub Pages repo name — change if you rename the repo
   plugins: [vue(), vuetify({ autoImport: true })],
-})
+});

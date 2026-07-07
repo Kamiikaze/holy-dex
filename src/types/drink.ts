@@ -1,8 +1,8 @@
-export type Kategorie = 'Energy' | 'Eistee' | 'Hydration' | 'Milchshake'
+export type Kategorie = 'Energy' | 'Iced Tea' | 'Hydration' | 'Milkshake'
 
 export type Bewertung = 'S' | 'A' | 'B' | 'C' | 'D' | 'E'
 
-export const KATEGORIEN: Kategorie[] = ['Energy', 'Eistee', 'Hydration', 'Milchshake']
+export const KATEGORIEN: Kategorie[] = ['Energy', 'Iced Tea', 'Hydration', 'Milkshake']
 
 export const BEWERTUNGEN: { value: Bewertung; label: string; color: string; weight: number }[] = [
   { value: 'S', label: 'Absoluter Favorit', color: '#FFD700', weight: 6 },
@@ -23,12 +23,13 @@ export interface Drink {
   sorte: string
   geschmack: string
   limitiert: boolean
-  bewertung: Bewertung
+  bewertung: Bewertung | null
   kommentar: string
 }
 
 export interface ExportPayload {
   version: 1
   exportedAt: string
+  shareTitle?: string
   drinks: Drink[]
 }
