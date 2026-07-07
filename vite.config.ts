@@ -4,6 +4,6 @@ import vuetify from "vite-plugin-vuetify";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/holy-drinks/", // GitHub Pages repo name — change if you rename the repo
+  base: "/holy-dex/", // GitHub Pages repo name — change if you rename the repo
   plugins: [vue(), vuetify({ autoImport: true })],
 });
