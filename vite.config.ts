@@ -4,6 +4,9 @@ import vuetify from "vite-plugin-vuetify";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/holy-dex/", // GitHub Pages repo name — change if you rename the repo
+  base: "/holy-dex/",
   plugins: [vue(), vuetify({ autoImport: true })],
+  build: {
+    target: "esnext",
+  },
 });
