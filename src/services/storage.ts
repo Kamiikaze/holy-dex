@@ -1,110 +1,33 @@
 import type { Bewertung, Drink, ExportPayload, Kategorie } from '../types/drink'
 
+import energySorten from '../static/energySorten.json'
+import eisteeSorten from '../static/eisteeSorten.json'
+import hydrationSorten from '../static/hydrationSorten.json'
+import milchshakeSorten from '../static/milchshakeSorten.json'
+import syrupSorten from '../static/syrupSorten.json'
+
+
 const STORAGE_KEY = 'holy-drinks:data'
 
 type PredefinedDrink = Pick<Drink, 'kategorie' | 'sorte' | 'geschmack' | 'limitiert'>
 
 const PREDEFINED_ROWS: PredefinedDrink[] = [
-    {kategorie: 'Energy', sorte: 'Caipirinha Crab', geschmack: 'Caipirinha Cocktail', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Colada Capybara', geschmack: 'Pina Colada', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Daiquiri Dolphin', geschmack: 'Erdbeere mit Limette', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Fruity Frog', geschmack: 'Tropische Früchte Mix', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Grapefruit Giraffe', geschmack: 'Grapefruit', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Mojito', geschmack: 'Limette mit Minze', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Plum x Cinnamon', geschmack: 'Pflaume mit Zimt (Weihnachten)', limitiert: true},
-    {kategorie: 'Energy', sorte: 'Pomegranate Piranha', geschmack: 'Granatapfel', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Baked Apple Boar', geschmack: 'Bratapfel (Weihnachten)', limitiert: true},
-    {kategorie: 'Energy', sorte: 'Energy Eel', geschmack: 'Guave', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Kola Koala', geschmack: 'Cola', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Peach Panther', geschmack: 'Pfirsich mit Aprikose', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Raspberry Raptor', geschmack: 'Himbeere mit Yuzu', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Woodruff Wolf', geschmack: 'Waldmeister', limitiert: true},
-    {kategorie: 'Energy', sorte: 'Apple Alligator', geschmack: 'Saftiger saurer Apfel', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Bubble Gum Butterfly', geschmack: 'Kaugummi', limitiert: true},
-    {kategorie: 'Energy', sorte: 'Candy Ice', geschmack: 'Eis mit Bonbon', limitiert: true},
-    {kategorie: 'Energy', sorte: 'Tangerine Tarantula', geschmack: 'Mandarine', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Thai Lime Toucan', geschmack: 'Kaffir-Limette', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Watermelon Whale', geschmack: 'Wassermelone', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Bloodorange Bat', geschmack: 'Blutorange', limitiert: true},
-    {kategorie: 'Energy', sorte: 'Açaí Anaconda', geschmack: 'Açaí mit Mandarine', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Blue Raspberry', geschmack: 'Blaue Himbeere (Hitschies)', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Blueberry Bear', geschmack: 'Blaubeere mit Kokos', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Cactus Camel', geschmack: 'Kaktusfeige', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Cherry Cheetah', geschmack: 'Kirsche', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Citrus Cobra', geschmack: 'Zitrusfrüchte mit Kalamansi', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Classic Energy', geschmack: 'Klassischer Energy Geschmack', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Cotton Candy', geschmack: 'Zuckerwatte', limitiert: true},
-    {kategorie: 'Energy', sorte: 'Dragonfruit Dragon', geschmack: 'Drachenfrucht', limitiert: false},
-    {kategorie: 'Energy', sorte: "Gorilla's Grape", geschmack: 'Grüne Weintraube', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Kiwi Komodo', geschmack: 'Kiwi', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Lemon Lizard', geschmack: 'Zitrone mit Gurke', limitiert: false},
-    {kategorie: 'Energy', sorte: "Lion's Lemonade", geschmack: 'Zitrone', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Lychee', geschmack: 'Litschi', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Orange', geschmack: 'Orange mit Vanille', limitiert: false},
-    {kategorie: 'Energy', sorte: "Peacock's Punch", geschmack: 'Bunter Fruchtcocktail', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Shisha Double Apple', geschmack: 'Doppel Apfel Shisha', limitiert: true},
-    {kategorie: 'Energy', sorte: 'Spider Legs', geschmack: 'Cola sauer', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Strawberry Shark', geschmack: 'Erdbeere mit Mandarine', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Tropical Tiger', geschmack: 'Ananas mit Passionsfrucht', limitiert: false},
-    {
-        kategorie: 'Energy',
-        sorte: 'Wildberry Wolf',
-        geschmack: 'Wilde Beeren Mix (Himbeere Brombeere Blaubeere)',
-        limitiert: false
-    },
-    {kategorie: 'Hydration', sorte: 'Cranberry', geschmack: 'Cranberry', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Guava', geschmack: 'Guave', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Lemon', geschmack: 'Zitrone', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Passion Fruit', geschmack: 'Passionsfrucht', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Pineapple', geschmack: 'Ananas', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Pink Grapefruit', geschmack: 'Grapefruit', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Strawberry Kiwi', geschmack: 'Erdbeere mit Kiwi', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Coconut', geschmack: 'Kokosnuss', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Multivitamin', geschmack: 'Multivitamin', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Pear', geschmack: 'Birne', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Sour Cherry', geschmack: 'Sauerkirsche', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'White Peach', geschmack: 'Weißer Pfirsich', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Mystery (?)', geschmack: 'Kokosnuss, Gojibeere', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Orange', geschmack: 'Orange', limitiert: false},
-    {kategorie: 'Hydration', sorte: 'Watermelon', geschmack: 'Wassermelone', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Apple', geschmack: 'Apfel mit Grüntee', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Darjeeling Honey', geschmack: 'Darjeeling mit Honig', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Peach x Black Tea', geschmack: 'Pfirsich', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Strawberry x Hibiscus', geschmack: 'Erdbeere', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Watermelon x Hibiscus', geschmack: 'Wassermelone', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Classic Iced Tea', geschmack: 'Schwarztee', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Mango x Passionfruit', geschmack: 'Mango mit Passionsfrucht', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Raspberry x Vanilla', geschmack: 'Himbeere mit Vanille', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Blackberry', geschmack: 'Brombeere mit Schwarztee', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Honey Melon x Green Tea', geschmack: 'Honigmelone', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Winter Punch x Hibiscus Tea', geschmack: 'Punsch', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Acai', geschmack: 'Açaí mit Hibiskus', limitiert: false},
-    {kategorie: 'Iced Tea', sorte: 'Lemon x Honey', geschmack: 'Zitrone mit Honig', limitiert: false},
-    {
-        kategorie: 'Iced Tea',
-        sorte: 'Lime x Mint x Matcha x Green Tea',
-        geschmack: 'Matcha mit Limette, Minze und grüner Tee',
-        limitiert: false
-    },
-    {kategorie: 'Iced Tea', sorte: 'Peach x Nectarine', geschmack: 'Pfirsich mit Nektarine', limitiert: false},
-    {
-        kategorie: 'Iced Tea',
-        sorte: 'Pineapple x Green Tea',
-        geschmack: 'Ananas mit Grüntee (SpongeBob)',
-        limitiert: true
-    },
-    {kategorie: 'Iced Tea', sorte: 'Red Grape x Hibiscus', geschmack: 'Rote Traube mit Hibiskus', limitiert: false},
-    {kategorie: 'Milkshake', sorte: 'Caramel', geschmack: 'Karamell', limitiert: false},
-    {kategorie: 'Milkshake', sorte: 'Hazelnut', geschmack: 'Haselnuss', limitiert: false},
-    {kategorie: 'Milkshake', sorte: 'Banana', geschmack: 'Banane', limitiert: false},
-    {kategorie: 'Milkshake', sorte: 'Speculatius', geschmack: 'Spekulatius', limitiert: true},
-    {kategorie: 'Milkshake', sorte: 'Strawberry', geschmack: 'Erdbeere', limitiert: false},
-    {kategorie: 'Milkshake', sorte: 'Vanilla', geschmack: 'Vanille', limitiert: false},
-    {kategorie: 'Milkshake', sorte: 'Coffee Latte', geschmack: 'Eiskaffee', limitiert: false},
-    {kategorie: 'Milkshake', sorte: 'Caramel-Coffee', geschmack: 'Eiskaffee mit Karamell', limitiert: false},
-    {kategorie: 'Milkshake', sorte: 'Hazelnut-Coffee', geschmack: 'Eiskaffee mit Haselnuss', limitiert: false},
-    {kategorie: 'Energy', sorte: 'Matcha Misaki', geschmack: 'Matcha mit Erdbeere', limitiert: false},
-]
+    ...energySorten.products as PredefinedDrink[],
+    ...eisteeSorten.products as PredefinedDrink[],
+    ...hydrationSorten.products as PredefinedDrink[],
+    ...milchshakeSorten.products as PredefinedDrink[],
+    ...syrupSorten.products as PredefinedDrink[],
+].sort((a, b) => {
+    // First sort by kategorie
+    const kategorieCompare = a.kategorie.localeCompare(b.kategorie)
+
+    if (kategorieCompare !== 0) {
+        return kategorieCompare
+    }
+
+    // If kategorie is equal, sort by sorte
+    return a.sorte.localeCompare(b.sorte)
+} )
 
 export const PREDEFINED_DRINKS: Drink[] = PREDEFINED_ROWS.map((drink) => ({
     id: predefinedId(drink.kategorie, drink.sorte),
@@ -227,9 +150,8 @@ function predefinedLookupKey(kategorie: Kategorie, sorte: string): string {
 }
 
 function normalizeKategorie(kategorie: string): Kategorie {
-    if (kategorie === 'Eistee') return 'Iced Tea'
     if (kategorie === 'Milchshake') return 'Milkshake'
-    if (kategorie === 'Energy' || kategorie === 'Iced Tea' || kategorie === 'Hydration' || kategorie === 'Milkshake') {
+    if (kategorie === 'Energy' || kategorie === 'Iced Tea' || kategorie === 'Hydration' || kategorie === 'Milkshake' || kategorie === 'Syrup') {
         return kategorie
     }
     throw new Error('Ungültiges Format: unbekannte Kategorie.')

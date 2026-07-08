@@ -1,0 +1,209 @@
+{
+  "count": 34,
+  "products": [
+    {
+      "kategorie": "Energy",
+      "sorte": "Apple Alligator",
+      "geschmack": "Saurer Apfel",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Pomegranate Piranha",
+      "geschmack": "Granatapfel",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Raspberry Raptor",
+      "geschmack": "Himbeere, Yuzu",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Tropical Tiger",
+      "geschmack": "Maracuja, Ananas",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Citrus Cobra",
+      "geschmack": "Zitrus, Kalamansi",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Strawberry Shark",
+      "geschmack": "Erdbeere, Mandarine",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Lemon Lizard",
+      "geschmack": "Zitrone, Gurke",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Lion's Lemonade",
+      "geschmack": "Mango, Kiwi",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Peach Panther",
+      "geschmack": "Pfirsich, Aprikose",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Blueberry Bear",
+      "geschmack": "Blaubeere, Kokos",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Fruity Frog",
+      "geschmack": "Mango, Maracuja, Ananas",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Cactus Camel",
+      "geschmack": "Kaktusfeige",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Gorilla's Grape",
+      "geschmack": "Grüne Traube",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Cherry Cheetah",
+      "geschmack": "Kirsche",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Wildberry Wolf",
+      "geschmack": "Wilde Beeren",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Watermelon Whale",
+      "geschmack": "Wassermelone",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Peacock's Punch",
+      "geschmack": "Ananas, Limette, Kokosnuss",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Thai Lime Toucan",
+      "geschmack": "Kaffir-Limette",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Energy Eel",
+      "geschmack": "Guarana",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Caipirinha Crab",
+      "geschmack": "Limette, Rohrzucker",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Daiquiri Dolphin",
+      "geschmack": "Erdbeere, Limette",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Mojito Macaw",
+      "geschmack": "Limette, Minze",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Kiwi Komodo",
+      "geschmack": "Kiwi",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Blood Orange Bat",
+      "geschmack": "Blutorange",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Dragon Fruit Dragon",
+      "geschmack": "Drachenfrucht",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Grapefruit Giraffe",
+      "geschmack": "Grapefruit",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "BURRsday Bunny",
+      "geschmack": "Litschi",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Capybara Colada",
+      "geschmack": "Ananas, Kokosnuss",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Acai Anaconda",
+      "geschmack": "Acai",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Tangerine Tarantula",
+      "geschmack": "Mandarine",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Cotton Candy Caterpillar",
+      "geschmack": "Zuckerwatte",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Kölle Kamelle",
+      "geschmack": "Himbeerbonbon",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Kola Koala",
+      "geschmack": "Kola Wassereis",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Matcha Misaki",
+      "geschmack": "Matcha, Erdbeere",
+      "limitiert": false
+    }
+  ]
+}

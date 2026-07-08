@@ -1,0 +1,65 @@
+{
+  "count": 10,
+  "products": [
+    {
+      "kategorie": "Syrup",
+      "sorte": "Strawberry",
+      "geschmack": "Strawberry",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Tangerine Yuzu",
+      "geschmack": "Tangerine Yuzu",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Raspberry",
+      "geschmack": "Raspberry",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Pomegranate",
+      "geschmack": "Pomegranate",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Mango",
+      "geschmack": "Mango",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Peach",
+      "geschmack": "Peach",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Grapefruit",
+      "geschmack": "Grapefruit",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Green Apple",
+      "geschmack": "Green Apple",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Elderflower Lime",
+      "geschmack": "Elderflower Lime",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Syrup",
+      "sorte": "Cola Ice Pop",
+      "geschmack": "Cola Ice Pop",
+      "limitiert": false
+    }
+  ]
+}

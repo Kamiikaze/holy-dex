@@ -1,8 +1,8 @@
-export type Kategorie = 'Energy' | 'Iced Tea' | 'Hydration' | 'Milkshake'
+export type Kategorie = 'Energy' | 'Iced Tea' | 'Hydration' | 'Milkshake' | 'Syrup'
 
 export type Bewertung = 'S' | 'A' | 'B' | 'C' | 'D' | 'E'
 
-export const KATEGORIEN: Kategorie[] = ['Energy', 'Iced Tea', 'Hydration', 'Milkshake']
+export const KATEGORIEN: Kategorie[] = ['Energy', 'Iced Tea', 'Hydration', 'Milkshake', 'Syrup']
 
 export const BEWERTUNGEN: { value: Bewertung; label: string; color: string; weight: number }[] = [
   { value: 'S', label: 'Absoluter Favorit', color: '#FFD700', weight: 6 },

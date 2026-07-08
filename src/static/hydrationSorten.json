@@ -1,0 +1,119 @@
+{
+  "count": 19,
+  "products": [
+    {
+      "kategorie": "Hydration",
+      "sorte": "Erdbeere x Kiwi",
+      "geschmack": "Erdbeere x Kiwi",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Grapefruit",
+      "geschmack": "Grapefruit",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Weißer Pfirsich",
+      "geschmack": "Weißer Pfirsich",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Birne",
+      "geschmack": "Birne",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Cranberry",
+      "geschmack": "Cranberry",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Zitrone",
+      "geschmack": "Zitrone",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Sauerkirsche",
+      "geschmack": "Sauerkirsche",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Ananas",
+      "geschmack": "Ananas",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Kokosnuss",
+      "geschmack": "Kokosnuss",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Wassermelone",
+      "geschmack": "Wassermelone",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Guave",
+      "geschmack": "Guave",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Passionsfrucht",
+      "geschmack": "Passionsfrucht",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Orange",
+      "geschmack": "Orange",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Multivitamin",
+      "geschmack": "Multivitamin",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Drachenfrucht",
+      "geschmack": "Drachenfrucht",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Blaue Himbeere",
+      "geschmack": "Blaue Himbeere",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Matcha, grüner Apfel & Kiwi",
+      "geschmack": "Matcha, grüner Apfel & Kiwi",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Grüner Apfel",
+      "geschmack": "Grüner Apfel",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Aprikose",
+      "geschmack": "Aprikose",
+      "limitiert": false
+    }
+  ]
+}

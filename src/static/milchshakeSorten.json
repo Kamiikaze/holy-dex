@@ -1,0 +1,59 @@
+{
+  "count": 9,
+  "products": [
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Haselnuss",
+      "geschmack": "Haselnuss",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Banane",
+      "geschmack": "Banane",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Vanille",
+      "geschmack": "Vanille",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Karamell",
+      "geschmack": "Karamell",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Erdbeere",
+      "geschmack": "Erdbeere",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Matcha Latte",
+      "geschmack": "Matcha Latte",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Eiskaffee Haselnuss",
+      "geschmack": "Eiskaffee Haselnuss",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Eiskaffee Karamell",
+      "geschmack": "Eiskaffee Karamell",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Eiskaffee",
+      "geschmack": "Eiskaffee",
+      "limitiert": false
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "count": 16,
+  "products": [
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Pfirsich",
+      "geschmack": "mit schwarzem Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Acai",
+      "geschmack": "mit Hibiskustee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Brombeere",
+      "geschmack": "mit schwarzem Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Apfel",
+      "geschmack": "mit grünem Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Himbeere x Vanille",
+      "geschmack": "mit Hibiskustee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Mango x Passionsfrucht",
+      "geschmack": "mit schwarzem Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Rote Traube",
+      "geschmack": "mit Hibiskustee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Limette x Matcha x Minze",
+      "geschmack": "mit grünem Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Zitrone x Honig",
+      "geschmack": "mit schwarzem Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Wassermelone",
+      "geschmack": "mit Hibiskustee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Honigmelone",
+      "geschmack": "mit grünem Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Darjeeling x Honig",
+      "geschmack": "mit schwarzem Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Grüner Tee",
+      "geschmack": "Grüner Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Hibiskus",
+      "geschmack": "Hibiskus",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Schwarzer Tee",
+      "geschmack": "Schwarzer Tee",
+      "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Erdbeere",
+      "geschmack": "mit Hibiskustee",
+      "limitiert": false
+    }
+  ]
+}
