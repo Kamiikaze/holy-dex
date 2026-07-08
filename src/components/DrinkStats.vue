@@ -52,12 +52,17 @@
             <div class="stat-header">🏆 Beste Bewertung</div>
 
             <div class="stat-value text-truncate">
-              {{ bestDrink?.sorte ?? "-" }}
+              {{ bestDrink?.sorte ?? "☹" }}
             </div>
 
-            <div v-if="bestDrink?.bewertung" class="stat-subtitle">
-              ⭐ {{ bestDrink.bewertung }} -
-              {{ bewertungMeta(bestDrink.bewertung!).label }}
+            <div class="stat-subtitle">
+              <span v-if="bestDrink?.bewertung" >
+                  ⭐ {{ bestDrink.bewertung }} -
+                {{ bewertungMeta(bestDrink.bewertung!).label }}
+              </span>
+                <span v-else>
+                    Hast wohl noch nichts probiert!
+                </span>
             </div>
           </v-card-text>
         </v-card>
@@ -104,7 +109,7 @@
             >
               <div class="d-flex justify-space-between">
                 <span>
-                  {{ rating.label }}
+                  {{ rating.value }} -  {{ rating.label }}
                 </span>
 
                 <span>
@@ -124,7 +129,7 @@
       </v-col>
 
       <!-- Best per category -->
-      <v-col cols="12">
+      <v-col v-show="bestPerCategory.length > 0" cols="12">
           <h2 class="text-center">🏆 Kategorie Top #5</h2>
         <v-row>
           <v-col
@@ -284,8 +289,7 @@ export default defineComponent({
         ).length;
 
         return {
-          label: b.label,
-          color: b.color,
+          ...b,
           count,
           percent: this.ratedDrinks.length
             ? (count / this.ratedDrinks.length) * 100

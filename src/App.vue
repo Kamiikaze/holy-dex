@@ -196,7 +196,7 @@
       class="stats-toggle"
       color="primary"
       rounded="pill"
-      prepend-icon="mdi-chart-box"
+      prepend-icon="mdi-chart-bar"
       @click="showStats = !showStats"
     >
       Statistiken {{ showStats ? "schließen" : "" }}
@@ -434,6 +434,10 @@ function mergeById(existing: Drink[], incoming: Drink[]): Drink[] {
   bottom: 24px;
   left: 32px;
   z-index: 100;
+    box-shadow: 0 0 10px 2px rgb(255 255 255 / 10%);
+}
+.stats-toggle:hover {
+    box-shadow: 0 0 10px 2px rgb(255 255 255 / 33%);
 }
 
 .stats-dock {
