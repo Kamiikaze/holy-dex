@@ -51,6 +51,7 @@
           Geteilte Liste wird nur angezeigt. Deine gespeicherte Liste bleibt
           unverändert.
         </v-alert>
+
         <v-row class="mb-4">
           <v-col cols="3" sm="2" md="3" />
           <v-col cols="12" sm="8" md="6">
@@ -189,6 +190,31 @@
       :shareList="drinks"
     />
 
+    <!-- DrinkStats -->
+    <!-- Toggle button -->
+    <v-btn
+      class="stats-toggle"
+      color="primary"
+      rounded="pill"
+      prepend-icon="mdi-chart-box"
+      @click="showStats = !showStats"
+    >
+      Statistiken {{ showStats ? "schließen" : "" }}
+    </v-btn>
+
+    <!-- Dock -->
+    <v-expand-transition>
+      <div
+        class="stats-dock"
+        :class="showStats ? '' : 'hidden'"
+      >
+        <div class="drag-handle" @click="showStats = !showStats"></div>
+        <div class="stats-content">
+          <DrinkStats :drinks="drinks" />
+        </div>
+      </div>
+    </v-expand-transition>
+
     <v-snackbar v-model="snackbar.show" :timeout="2500">{{
       snackbar.text
     }}</v-snackbar>
@@ -219,16 +245,23 @@ import {
   clearShareParamFromUrl,
 } from "./services/share";
 import ShareTitleDialog from "./components/ShareNameDialog.vue";
+import DrinkStats from "./components/DrinkStats.vue";
 
 export default defineComponent({
   name: "App",
-  components: { ShareTitleDialog, DrinkFormDialog, SharedImportDialog },
+  components: {
+    DrinkStats,
+    ShareTitleDialog,
+    DrinkFormDialog,
+    SharedImportDialog,
+  },
   data() {
     return {
       KATEGORIEN,
       bewertungMeta,
       drinks: [] as Drink[],
       search: "",
+      showStats: false,
       kategorieFilter: [] as Kategorie[],
       bewertungFilter: [] as Bewertung[],
       limitiertFilter: 0,
@@ -394,3 +427,73 @@ function mergeById(existing: Drink[], incoming: Drink[]): Drink[] {
   return [...map.values()];
 }
 </script>
+
+<style scoped>
+.stats-toggle {
+  position: fixed;
+  bottom: 24px;
+  left: 32px;
+  z-index: 100;
+}
+
+.stats-dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 80vh;
+  z-index: 99;
+  padding: 8px;
+  margin: 0 24px;
+  background: rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 32px 32px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    opacity 0.7s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+.stats-dock.hidden {
+  opacity: 0;
+  transform: translate(0, 100%) scale(0.9);
+}
+
+.stats-content {
+  max-height: calc(80vh - 40px);
+  overflow-y: auto;
+  padding-right: 8px;
+  padding-bottom: 32px;
+}
+.stats-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.stats-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+.stats-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.stats-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.drag-handle {
+  width: 70px;
+  height: 8px;
+  margin: 0 auto 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+.drag-handle:hover {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 2px rgb(255 255 255 / 33%);
+}
+</style>

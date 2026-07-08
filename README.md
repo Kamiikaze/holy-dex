@@ -88,7 +88,7 @@ Eigene Bewertungen können exportiert und später wieder importiert werden. Dadu
 * [x] Alle Sorten hinzufügen
 * [x] Erweiterte Filter
 * [x] Sortierung nach Bewertung
-* [ ] Statistiken über Lieblingssorten
+* [x] Statistiken über Lieblingssorten
 * [ ] Vergleich mehrerer Bewertungen
 * [ ] Alle HOLY Sorten testen 😋
 
