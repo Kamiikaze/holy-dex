@@ -4,10 +4,9 @@
       <v-app-bar-title>
         🥤 HolyDex
         <span
-          v-if="viewingShared && shareTitle.length > 0"
-          class="d-block mt-1 ml-2 text-mono text-title-medium"
+          class="d-block mt-1 ml-2 text-mono text-title-small"
         >
-          Liste: {{ shareTitle }}
+          {{ (viewingShared && shareTitle.length > 0) ? 'Liste: '+ shareTitle : 'Trink sie alle!' }}
         </span>
       </v-app-bar-title>
       <v-spacer />
@@ -40,7 +39,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container fluid>
+      <v-container fluid class="mb-12">
         <v-alert
           v-if="viewingShared"
           type="info"
@@ -141,10 +140,11 @@
               v-if="item.kommentar"
               v-model="item.kommentar"
               class="ma-auto text-disabled"
-              variant="outlined"
+              variant="plain"
               density="compact"
               rows="1"
               max-rows="2"
+              auto-grow
               hide-details
               readonly
             ></v-textarea>

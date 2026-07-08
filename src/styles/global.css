@@ -35,7 +35,7 @@ header {
   left: 0;
   right: 0;
   margin: 12px auto;
-  max-width: calc(100% - 24px);
+  max-width: min(calc(var(--page-width) - 24px), calc(100% - 24px));
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
@@ -96,4 +96,13 @@ main {
 }
 .v-data-table__tr:hover .v-data-table-column--align-start {
   text-shadow: 0 0 10px rgb(255 46 138);
+}
+
+.v-menu .v-sheet {
+  background: transparent;
+}
+.v-menu .v-list {
+  background: rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
