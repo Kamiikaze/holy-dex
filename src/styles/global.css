@@ -17,12 +17,9 @@
 .v-card::before,
 header::before {
   content: "";
-
   position: absolute;
   inset: 0;
-
   background: var(--bg-main);
-
   pointer-events: none;
 }
 
@@ -31,16 +28,15 @@ header::before {
 }
 
 header {
-  background-color: transparent;
+  background: rgb(255 255 255 / 0.1);
   left: 0;
   right: 0;
   margin: 12px auto;
   max-width: min(calc(var(--page-width) - 24px), calc(100% - 24px));
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  border-radius: 24px;
 }
 header::before {
-  background: rgb(255 255 255 / 0.1);
   border-radius: 24px;
 }
 
@@ -51,15 +47,19 @@ main {
   width: stretch;
 }
 
+#app-version {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  pointer-events: none;
+}
+
 .v-card {
   position: relative;
   overflow: hidden;
-
   padding: 8px;
-
   background: rgb(25 25 25 / 50%);
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
 
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -68,14 +68,13 @@ main {
   box-shadow: 0 0 20px rgba(255, 46, 138, 0.25);
 }
 
-
 .v-input:hover .v-field__outline {
   color: #ff2e8a;
   box-shadow: 0 0 20px rgba(255, 46, 138, 0.25);
 }
 
 .v-data-table {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgb(255 255 255 / 0.38);
   padding: 4px;
   border-radius: 24px;
@@ -88,7 +87,6 @@ main {
   backdrop-filter: blur(3px);
   padding-top: 10px;
   padding-bottom: 10px;
-  -webkit-backdrop-filter: blur(3px);
 }
 .v-data-table__tr:hover {
   border: 1px solid #ff2e8a;
@@ -104,5 +102,4 @@ main {
 .v-menu .v-list {
   background: rgb(255 255 255 / 0.1);
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
 }

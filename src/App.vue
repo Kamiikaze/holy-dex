@@ -3,10 +3,12 @@
     <v-app-bar flat absolute>
       <v-app-bar-title>
         🥤 HolyDex
-        <span
-          class="d-block mt-1 ml-2 text-mono text-title-small"
-        >
-          {{ (viewingShared && shareTitle.length > 0) ? 'Liste: '+ shareTitle : 'Trink sie alle!' }}
+        <span class="d-block mt-1 ml-2 text-mono text-title-small">
+          {{
+            viewingShared && shareTitle.length > 0
+              ? "Liste: " + shareTitle
+              : "Trink sie alle!"
+          }}
         </span>
       </v-app-bar-title>
       <v-spacer />
@@ -204,10 +206,7 @@
 
     <!-- Dock -->
     <v-expand-transition>
-      <div
-        class="stats-dock"
-        :class="showStats ? '' : 'hidden'"
-      >
+      <div class="stats-dock" :class="showStats ? '' : 'hidden'">
         <div class="drag-handle" @click="showStats = !showStats"></div>
         <div class="stats-content">
           <DrinkStats :drinks="drinks" />
@@ -218,6 +217,10 @@
     <v-snackbar v-model="snackbar.show" :timeout="2500">{{
       snackbar.text
     }}</v-snackbar>
+
+    <div id="app-version" class="text-disabled text-title-small">
+      v{{ version }}
+    </div>
   </v-app>
 </template>
 
@@ -225,6 +228,7 @@
 import { defineComponent } from "vue";
 import DrinkFormDialog from "./components/DrinkFormDialog.vue";
 import SharedImportDialog from "./components/SharedImportDialog.vue";
+import { version } from "../package.json";
 import {
   KATEGORIEN,
   bewertungMeta,
@@ -257,6 +261,7 @@ export default defineComponent({
   },
   data() {
     return {
+      version,
       KATEGORIEN,
       bewertungMeta,
       drinks: [] as Drink[],
@@ -434,10 +439,10 @@ function mergeById(existing: Drink[], incoming: Drink[]): Drink[] {
   bottom: 24px;
   left: 32px;
   z-index: 100;
-    box-shadow: 0 0 10px 2px rgb(255 255 255 / 10%);
+  box-shadow: 0 0 10px 2px rgb(255 255 255 / 10%);
 }
 .stats-toggle:hover {
-    box-shadow: 0 0 10px 2px rgb(255 255 255 / 33%);
+  box-shadow: 0 0 10px 2px rgb(255 255 255 / 33%);
 }
 
 .stats-dock {
