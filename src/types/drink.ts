@@ -5,11 +5,11 @@ export type Bewertung = 'S' | 'A' | 'B' | 'C' | 'D' | 'E'
 export const KATEGORIEN: Kategorie[] = ['Energy', 'Iced Tea', 'Hydration', 'Milkshake', 'Syrup']
 
 export const BEWERTUNGEN: { value: Bewertung; label: string; color: string; weight: number }[] = [
-  { value: 'S', label: 'Absoluter Favorit', color: '#FFD700', weight: 6 },
+  { value: 'S', label: 'Absoluter Favorit', color: '#FFFF00', weight: 6 },
   { value: 'A', label: 'Sehr gut', color: '#4CAF50', weight: 5 },
   { value: 'B', label: 'Gut', color: '#8BC34A', weight: 4 },
-  { value: 'C', label: 'Ganz ok', color: '#FFC107', weight: 3 },
-  { value: 'D', label: 'Muss nicht', color: '#FF9800', weight: 2 },
+  { value: 'C', label: 'Ganz ok', color: '#ca9700', weight: 3 },
+  { value: 'D', label: 'Muss nicht', color: '#c67700', weight: 2 },
   { value: 'E', label: 'Geht gar nicht', color: '#F44336', weight: 1 },
 ]
 
