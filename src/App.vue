@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <v-app-bar flat scrollBehavior="elevate">
+    <v-app-bar flat absolute>
       <v-app-bar-title>
-        🥤 HOLY Softdrinks
+        🥤 HolyDex
         <span
           v-if="viewingShared && shareTitle.length > 0"
           class="d-block mt-1 ml-2 text-mono text-title-medium"
@@ -222,7 +222,7 @@ export default defineComponent({
           align: "center" as const,
         },
         { title: "Bewertung", key: "bewertung", align: "center" as const },
-        { title: "Kommentar", key: "kommentar", sortable: false },
+        { title: "Notiz", key: "kommentar", sortable: false },
         { title: "", key: "actions", sortable: false, align: "end" as const },
       ],
     };
