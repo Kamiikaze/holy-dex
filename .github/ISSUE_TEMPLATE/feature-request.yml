@@ -1,0 +1,25 @@
+name: ✨ Feature vorschlagen
+description: Schlage eine neue Funktion für HolyDex vor.
+title: "[Feature]: "
+labels:
+  - enhancement
+
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Welches Problem soll gelöst werden?
+    validations:
+      required: true
+
+  - type: textarea
+    id: loesung
+    attributes:
+      label: Wie stellst du dir die Lösung vor?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternativ
+    attributes:
+      label: Gibt es Alternativen?

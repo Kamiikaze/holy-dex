@@ -1,0 +1,26 @@
+name: 📝 Datenfehler melden
+description: Falsche Informationen zu einer Sorte melden.
+title: "[Datenfehler]: "
+labels:
+  - daten
+
+body:
+  - type: input
+    id: sorte
+    attributes:
+      label: Betroffene Sorte
+    validations:
+      required: true
+
+  - type: textarea
+    id: fehler
+    attributes:
+      label: Was ist falsch?
+      description: Beispielsweise Kategorie, Geschmack oder Limited-Status.
+    validations:
+      required: true
+
+  - type: textarea
+    id: korrekt
+    attributes:
+      label: Wie sollte es stattdessen sein?

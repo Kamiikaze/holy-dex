@@ -1,0 +1,53 @@
+name: 🥤 Neue Sorte hinzufügen
+description: Schlage eine fehlende HOLY-Sorte vor.
+title: "[Neue Sorte]: "
+labels:
+  - neue sorte
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fehlt eine Sorte? Dann hilf mit!
+
+  - type: dropdown
+    id: kategorie
+    attributes:
+      label: Kategorie
+      options:
+        - Energy
+        - Hydration
+        - Eistee
+        - Milkshake
+        - Syrup Pod
+    validations:
+      required: true
+
+  - type: input
+    id: sorte
+    attributes:
+      label: Name der Sorte
+    validations:
+      required: true
+
+  - type: input
+    id: geschmack
+    attributes:
+      label: Geschmack
+
+  - type: dropdown
+    id: limitiert
+    attributes:
+      label: Limitiert?
+      options:
+        - Ja
+        - Nein
+        - Unbekannt
+    validations:
+      required: true
+
+  - type: input
+    id: quelle
+    attributes:
+      label: Quelle
+      description: Link zum HOLY-Shop oder Bild der Dose/Verpackung.

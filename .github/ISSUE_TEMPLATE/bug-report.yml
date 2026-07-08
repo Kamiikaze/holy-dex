@@ -1,0 +1,54 @@
+name: 🐛 Fehler melden
+description: Melde einen Fehler oder ein unerwartetes Verhalten.
+title: "[Bug]: "
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Vielen Dank für deinen Fehlerbericht! Bitte beschreibe das Problem möglichst genau.
+
+  - type: textarea
+    id: beschreibung
+    attributes:
+      label: Fehlerbeschreibung
+      description: Was ist passiert?
+      placeholder: Beschreibe den Fehler...
+    validations:
+      required: true
+
+  - type: textarea
+    id: schritte
+    attributes:
+      label: Schritte zum Reproduzieren
+      placeholder: |
+        1. Öffne...
+        2. Klicke auf...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Erwartetes Verhalten
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots oder weitere Informationen
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Edge
+        - Safari
+        - Sonstiges
