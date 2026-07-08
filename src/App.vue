@@ -18,14 +18,12 @@
         >Eigene Liste</v-btn
       >
       <v-btn
-        prepend-icon="mdi-tray-arrow-up"
+        prepend-icon="mdi-tray-arrow-down"
         :disabled="viewingShared"
         @click="triggerImport"
         >Import</v-btn
       >
-      <v-btn prepend-icon="mdi-tray-arrow-down" @click="exportJson"
-        >Export</v-btn
-      >
+      <v-btn prepend-icon="mdi-tray-arrow-up" @click="exportJson">Export</v-btn>
       <v-btn
         prepend-icon="mdi-share-variant"
         @click="shareTitlePrompOpen = true"
@@ -53,9 +51,9 @@
           Geteilte Liste wird nur angezeigt. Deine gespeicherte Liste bleibt
           unverändert.
         </v-alert>
-
         <v-row class="mb-4">
-          <v-col cols="12" sm="6" md="4">
+          <v-col cols="3" sm="2" md="3" />
+          <v-col cols="12" sm="8" md="6">
             <v-text-field
               v-model="search"
               label="Suche"
@@ -64,14 +62,41 @@
               hide-details
             />
           </v-col>
+          <v-col cols="3" sm="2" md="3" />
+        </v-row>
+
+        <v-row class="mb-8">
           <v-col cols="12" sm="6" md="4">
             <v-select
               v-model="kategorieFilter"
-              :items="KATEGORIEN"
               label="Kategorie"
+              :items="KATEGORIEN"
               clearable
               multiple
               chips
+              hide-details
+            />
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-select
+              v-model="bewertungFilter"
+              label="Bewertungen"
+              :items="BEWERTUNGEN()"
+              item-title="value"
+              item-value="value"
+              clearable
+              multiple
+              chips
+              hide-details
+            />
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-select
+              v-model="limitiertFilter"
+              label="Limitiert"
+              :items="limitiertFilterOptions"
+              item-title="label"
+              item-value="value"
               hide-details
             />
           </v-col>
@@ -81,6 +106,7 @@
           :headers="headers"
           :items="filteredDrinks"
           :search="search"
+          :sortBy="[{ key: 'bewertung', order: 'desc' }]"
           item-key="id"
           items-per-page="25"
         >
@@ -178,6 +204,8 @@ import {
   bewertungMeta,
   type Drink,
   type Kategorie,
+  BEWERTUNGEN,
+  type Bewertung,
 } from "./types/drink";
 import {
   loadDrinks,
@@ -202,6 +230,13 @@ export default defineComponent({
       drinks: [] as Drink[],
       search: "",
       kategorieFilter: [] as Kategorie[],
+      bewertungFilter: [] as Bewertung[],
+      limitiertFilter: 0,
+      limitiertFilterOptions: [
+        { label: "Alle anzeigen", value: 0 },
+        { label: "Nur limitierte", value: 1 },
+        { label: "Nicht limitierte", value: 2 },
+      ],
       dialogOpen: false,
       editing: null as Drink | null,
       shareTitle: "",
@@ -227,24 +262,10 @@ export default defineComponent({
       ],
     };
   },
-  computed: {
-    filteredDrinks(): Drink[] {
-      if (!this.kategorieFilter.length) return this.drinks;
-      return this.drinks.filter((d) =>
-        this.kategorieFilter.includes(d.kategorie),
-      );
-    },
-  },
-  mounted() {
-    this.drinks = loadDrinks();
-    const shared = readSharedDrinksFromUrl();
-    if (shared && shared.drinks.length) {
-      this.shareTitle = shared.shareTitle ?? "";
-      this.sharedDrinks = shared.drinks;
-      this.sharedPromptOpen = true;
-    }
-  },
   methods: {
+    BEWERTUNGEN() {
+      return BEWERTUNGEN;
+    },
     persist() {
       if (this.viewingShared) return;
       saveDrinks(this.drinks);
@@ -330,6 +351,40 @@ export default defineComponent({
     notify(text: string) {
       this.snackbar = { show: true, text };
     },
+  },
+  computed: {
+    filteredDrinks(): Drink[] {
+      let filteredList = this.drinks;
+
+      if (this.kategorieFilter.length) {
+        filteredList = filteredList.filter((d) =>
+          this.kategorieFilter.includes(d.kategorie),
+        );
+      }
+
+      if (this.bewertungFilter.length) {
+        filteredList = filteredList.filter((d) =>
+          d.bewertung ? this.bewertungFilter.includes(d.bewertung) : false,
+        );
+      }
+
+      if (this.limitiertFilter > 0) {
+        filteredList = filteredList.filter((d) =>
+          this.limitiertFilter === 1 ? d.limitiert : !d.limitiert,
+        );
+      }
+
+      return filteredList;
+    },
+  },
+  mounted() {
+    this.drinks = loadDrinks();
+    const shared = readSharedDrinksFromUrl();
+    if (shared && shared.drinks.length) {
+      this.shareTitle = shared.shareTitle ?? "";
+      this.sharedDrinks = shared.drinks;
+      this.sharedPromptOpen = true;
+    }
   },
 });
 

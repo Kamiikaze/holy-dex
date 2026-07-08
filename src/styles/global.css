@@ -35,8 +35,7 @@ header {
   left: 0;
   right: 0;
   margin: 12px auto;
-  width: 90% !important;
-  max-width: calc(var(--page-width) * 0.9 - 24px);
+  max-width: calc(100% - 24px);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
