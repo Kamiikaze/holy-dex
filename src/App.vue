@@ -221,11 +221,11 @@
         class="stats-dock"
         :class="showStats ? '' : 'hidden'"
         v-click-outside="{
-          handler: () => (showStats = !showStats),
+          handler: () => showStats = false,
           include: outsideClickInclude,
         }"
       >
-        <div class="drag-handle" @click="showStats = !showStats"></div>
+        <div class="drag-handle" @click="showStats = false"></div>
         <div class="stats-content">
           <DrinkStats :drinks="drinks" />
         </div>
