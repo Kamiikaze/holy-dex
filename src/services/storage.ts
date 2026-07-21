@@ -58,6 +58,10 @@ export function saveDrinks(drinks: Drink[]): void {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(toExportPayload(drinks)))
 }
 
+export function resetDrinks(): void {
+    localStorage.removeItem(STORAGE_KEY)
+}
+
 export function makeId(): string {
     return crypto.randomUUID()
 }

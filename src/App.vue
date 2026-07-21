@@ -41,7 +41,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container fluid class="mb-12">
+      <v-container fluid class="mb-2">
         <v-alert
           v-if="viewingShared"
           type="info"
@@ -167,6 +167,15 @@
             </template>
           </template>
         </v-data-table>
+
+        <v-btn
+          class="d-flex w-auto mx-auto mt-8"
+          variant="outlined"
+          color="error"
+          prepend-icon="mdi-eraser"
+          @click="showResetDialog = !showResetDialog"
+          >Zurücksetzen
+        </v-btn>
       </v-container>
     </v-main>
 
@@ -191,6 +200,8 @@
       @msg="notify"
       :shareList="drinks"
     />
+
+    <ResetDataDialog v-model="showResetDialog" />
 
     <!-- DrinkStats -->
     <!-- Toggle button -->
@@ -250,10 +261,12 @@ import {
 } from "./services/share";
 import ShareTitleDialog from "./components/ShareNameDialog.vue";
 import DrinkStats from "./components/DrinkStats.vue";
+import ResetDataDialog from "./components/ResetDataDialog.vue";
 
 export default defineComponent({
   name: "App",
   components: {
+    ResetDataDialog,
     DrinkStats,
     ShareTitleDialog,
     DrinkFormDialog,
@@ -267,6 +280,7 @@ export default defineComponent({
       drinks: [] as Drink[],
       search: "",
       showStats: false,
+      showResetDialog: false,
       kategorieFilter: [] as Kategorie[],
       bewertungFilter: [] as Bewertung[],
       limitiertFilter: 0,
