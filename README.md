@@ -90,6 +90,7 @@ Eigene Bewertungen können exportiert und später wieder importiert werden. Dadu
 * [x] Sortierung nach Bewertung
 * [x] Statistiken über Lieblingssorten
 * [ ] Vergleich mehrerer Bewertungen
+* [ ] Verlinkungen zum HOLY Shop
 * [ ] Alle HOLY Sorten testen 😋
 
 ---
