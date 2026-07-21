@@ -59,7 +59,13 @@
       "kategorie": "Milkshake",
       "sorte": "Speculoos",
       "geschmack": "Spekulatius",
-      "limitiert": false
+      "limitiert": true
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Baked Apple Boar",
+      "geschmack": "Bratapfel",
+      "limitiert": true
     }
   ]
 }

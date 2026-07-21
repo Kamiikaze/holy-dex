@@ -204,6 +204,30 @@
       "sorte": "Matcha Misaki",
       "geschmack": "Matcha, Erdbeere",
       "limitiert": false
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Bubble Gum Butterfly",
+      "geschmack": "Kaugummi",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Candy Ice",
+      "geschmack": "Eisbonbon",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Plum x Cinnamon",
+      "geschmack": "Pflaume mit Zimt",
+      "limitiert": true
+    },
+    {
+      "kategorie": "Energy",
+      "sorte": "Woodruff Wolf",
+      "geschmack": "Waldmeister",
+      "limitiert": true
     }
   ]
 }

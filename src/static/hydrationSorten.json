@@ -114,6 +114,12 @@
       "sorte": "Aprikose",
       "geschmack": "Aprikose",
       "limitiert": false
+    },
+    {
+      "kategorie": "Hydration",
+      "sorte": "Mystery (Dez 2025)",
+      "geschmack": "Kokosnuss, Gojibeere",
+      "limitiert": true
     }
   ]
 }

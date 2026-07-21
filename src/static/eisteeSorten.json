@@ -96,6 +96,12 @@
       "sorte": "Erdbeere",
       "geschmack": "mit Hibiskustee",
       "limitiert": false
+    },
+    {
+      "kategorie": "Iced Tea",
+      "sorte": "Winter Punch",
+      "geschmack": "mit Hibiskustee",
+      "limitiert": true
     }
   ]
 }
