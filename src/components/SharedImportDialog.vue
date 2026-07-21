@@ -12,11 +12,14 @@
       <v-card-actions class="flex-wrap">
         <v-btn variant="text" @click="$emit('discard')">Ignorieren</v-btn>
         <v-spacer />
-        <v-btn variant="outlined" @click="$emit('view')">Nur ansehen</v-btn>
         <v-btn variant="outlined" @click="$emit('merge')">Zusammenführen</v-btn>
-        <v-btn color="warning" variant="flat" @click="$emit('replace')"
-          >Ersetzen</v-btn
-        >
+        <v-btn color="warning" variant="flat" @click="$emit('replace')">
+          Ersetzen
+        </v-btn>
+        <v-spacer />
+        <v-btn color="green" variant="outlined" @click="$emit('view')">
+          Nur ansehen
+        </v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>

@@ -14,6 +14,7 @@
       <v-spacer />
       <v-btn
         v-if="viewingShared"
+        variant="outlined"
         prepend-icon="mdi-arrow-left"
         @click="returnToOwnData"
         >Eigene Liste</v-btn

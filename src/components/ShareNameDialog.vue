@@ -5,13 +5,13 @@
       <v-divider />
       <v-card-text>
         Gib ein Titel für deine Liste ein. (z.B. dein Name) <br />
-        Andere die dein Link öffnen, sehen dann den Titel der Liste. (optional)
+        Andere die dein Link öffnen, sehen dann den Titel der Liste.
 
         <v-text-field
           v-model="shareTitle"
           class="mt-4"
           variant="outlined"
-          label="Titel der Liste"
+          label="Titel der Liste (optional)"
           hide-details
         />
       </v-card-text>
