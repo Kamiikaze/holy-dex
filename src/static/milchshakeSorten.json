@@ -54,6 +54,12 @@
       "sorte": "Eiskaffee",
       "geschmack": "Eiskaffee",
       "limitiert": false
+    },
+    {
+      "kategorie": "Milkshake",
+      "sorte": "Speculoos",
+      "geschmack": "Spekulatius",
+      "limitiert": false
     }
   ]
 }
