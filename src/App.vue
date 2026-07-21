@@ -63,6 +63,7 @@
               prepend-inner-icon="mdi-magnify"
               clearable
               hide-details
+              persistentClear
             />
           </v-col>
           <v-col cols="3" sm="2" md="3" />
@@ -222,7 +223,7 @@
         class="stats-dock"
         :class="showStats ? '' : 'hidden'"
         v-click-outside="{
-          handler: () => showStats = false,
+          handler: () => (showStats = false),
           include: outsideClickInclude,
         }"
       >
@@ -264,8 +265,8 @@ import {
   PREDEFINED_DRINKS,
 } from "./services/storage";
 import {
-  readSharedDrinksFromUrl,
   clearShareParamFromUrl,
+  readSharedDrinksFromUrl,
 } from "./services/share";
 import ShareTitleDialog from "./components/ShareNameDialog.vue";
 import DrinkStats from "./components/DrinkStats.vue";
@@ -443,8 +444,9 @@ export default defineComponent({
   mounted() {
     this.drinks = loadDrinks();
     const shared = readSharedDrinksFromUrl();
+    console.log("shared", shared);
     if (shared && shared.drinks.length) {
-      this.shareTitle = shared.shareTitle ?? "";
+      this.shareTitle = shared.title ?? "";
       this.sharedDrinks = shared.drinks;
       this.sharedPromptOpen = true;
     }
