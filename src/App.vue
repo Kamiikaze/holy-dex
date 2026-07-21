@@ -217,7 +217,14 @@
 
     <!-- Dock -->
     <v-expand-transition>
-      <div class="stats-dock" :class="showStats ? '' : 'hidden'">
+      <div
+        class="stats-dock"
+        :class="showStats ? '' : 'hidden'"
+        v-click-outside="{
+          handler: () => (showStats = !showStats),
+          include: outsideClickInclude,
+        }"
+      >
         <div class="drag-handle" @click="showStats = !showStats"></div>
         <div class="stats-content">
           <DrinkStats :drinks="drinks" />
@@ -317,6 +324,9 @@ export default defineComponent({
   methods: {
     BEWERTUNGEN() {
       return BEWERTUNGEN;
+    },
+    outsideClickInclude() {
+      return [document.querySelector(".stats-toggle")];
     },
     persist() {
       if (this.viewingShared) return;
